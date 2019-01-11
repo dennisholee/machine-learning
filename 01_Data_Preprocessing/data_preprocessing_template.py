@@ -2,8 +2,9 @@ import numpy as py
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import LabelEncoder, Normalizer, OneHotEncoder
+from sklearn.preprocessing import LabelEncoder, Normalizer, OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
+from sklearn.model_selection import train_test_split
 
 """
 Import missing data
@@ -38,3 +39,12 @@ X = ct_X.fit_transform(X)
 
 labelencoder = LabelEncoder()
 Y = labelencoder.fit_transform(Y)
+
+"""
+Splitting the dataset into the training and test set
+"""
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
+
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)
