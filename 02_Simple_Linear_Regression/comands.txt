@@ -1,0 +1,2 @@
+# Convert Salary_Data.csv to an array format for transposing to code
+tail -n+2 Salary_Data.csv | sed 's/^/\[/;s/.$/],/'
