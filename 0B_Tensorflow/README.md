@@ -57,3 +57,7 @@ gcloud ai-platform jobs list
 Command> :map R :!python <C-R>=expand('%:p') <CR>
 Example> :!python /Users/dennislee/Devs/MachineLearning/machine-learning/0B_Tensorflow/test.py
 ```
+
+# Useful Link
+
+* https://androidkt.com/train-keras-model-with-tensorflow-estimators-and-datasets-api/
